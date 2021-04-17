@@ -8,6 +8,17 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Homescreen from "../homescreen"
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+document.addEventListener('DOMContentLoaded', () => {
+  ReactDOM.render(
+    <Homescreen />,
+    document.body.appendChild(document.createElement('div')),
+  )
+})
