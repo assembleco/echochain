@@ -11,9 +11,9 @@ const Homescreen = props => (
     </Sidebar>
 
     <Relays>
-      <Relay>A</Relay>
-      <Relay>B</Relay>
-      <Relay>C</Relay>
+      <Relay>Personal</Relay>
+      <Relay>Business</Relay>
+      <Relay>Echochain beginner</Relay>
     </Relays>
 
     <Queue>
