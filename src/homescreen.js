@@ -44,6 +44,7 @@ var Sidebar = styled.div`
 border: 4px solid #3d3b11;
 border-radius: 4px;
 padding: 12px;
+height: 120px;
 `
 
 var Relays = styled.div`
