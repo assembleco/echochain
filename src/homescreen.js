@@ -8,10 +8,6 @@ const Homescreen = props => (
 )
 
 var Screen = styled.div`
-background: #f8f6bb;
-color: #3d3b11;
-font-family: "Ruluko";
-
 padding: 24px;
 position: absolute;
 bottom: 0;
