@@ -9,6 +9,12 @@ const Homescreen = props => (
       P<br/>
       P<br/>
     </Sidebar>
+
+    <Relays>
+      <Relay>A</Relay>
+      <Relay>B</Relay>
+      <Relay>C</Relay>
+    </Relays>
   </Screen>
 )
 
@@ -22,10 +28,22 @@ top: 0;
 
 display: grid;
 grid-template-columns: 48px auto 1fr;
+grid-template-rows: auto;
 `
 
-const Sidebar = styled.div`
+var Sidebar = styled.div`
 border: 4px solid #3d3b11;
+border-radius: 4px;
+padding: 12px;
+`
+
+var Relays = styled.div`
+display: flex;
+flex-direction: column;
+`
+
+var Relay = styled.div`
+border: 2px solid #3d3b11;
 border-radius: 4px;
 padding: 12px;
 `
