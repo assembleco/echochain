@@ -45,6 +45,7 @@ border: 4px solid #3d3b11;
 border-radius: 4px;
 padding: 12px;
 height: 120px;
+background-color: #FAF9DD;
 `
 
 var Relays = styled.div`
@@ -56,6 +57,7 @@ var Relay = styled.div`
 border: 2px solid #3d3b11;
 border-radius: 4px;
 padding: 12px;
+background-color: #FAF9DD;
 `
 
 var Queue = styled.div`
@@ -67,6 +69,7 @@ var Signal = styled.div`
 border: 1px solid #3d3b11;
 border-radius: 4px;
 padding: 12px;
+background-color: #FAF9DD;
 `
 
 export default Homescreen
