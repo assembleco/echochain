@@ -15,6 +15,15 @@ const Homescreen = props => (
       <Relay>B</Relay>
       <Relay>C</Relay>
     </Relays>
+
+    <Queue>
+      <Signal style={{height: Math.random() * 240 }}>abc123</Signal>
+      <Signal style={{height: Math.random() * 240 }}>abc123</Signal>
+      <Signal style={{height: Math.random() * 240 }}>abc123</Signal>
+      <Signal style={{height: Math.random() * 240 }}>abc123</Signal>
+      <Signal style={{height: Math.random() * 240 }}>abc123</Signal>
+      <Signal style={{height: Math.random() * 240 }}>abc123</Signal>
+    </Queue>
   </Screen>
 )
 
@@ -44,6 +53,17 @@ flex-direction: column;
 
 var Relay = styled.div`
 border: 2px solid #3d3b11;
+border-radius: 4px;
+padding: 12px;
+`
+
+var Queue = styled.div`
+display: flex;
+flex-direction: column;
+`
+
+var Signal = styled.div`
+border: 1px solid #3d3b11;
 border-radius: 4px;
 padding: 12px;
 `
