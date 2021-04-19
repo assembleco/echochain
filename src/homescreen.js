@@ -3,14 +3,13 @@ import styled from "styled-components"
 
 import { Icon, InlineIcon } from "@iconify/react"
 import personFill from "@iconify-icons/bi/person-fill"
+import linkChain from "@iconify-icons/akar-icons/link-chain"
 
 const Homescreen = props => (
   <Screen>
     <Sidebar>
+      <Icon icon={linkChain} />
       <Icon icon={personFill} />
-      <span>P</span>
-      <span>P</span>
-      <span>P</span>
     </Sidebar>
 
     <Relays>
