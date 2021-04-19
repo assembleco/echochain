@@ -1,13 +1,16 @@
 import React from 'react'
 import styled from "styled-components"
 
+import { Icon, InlineIcon } from "@iconify/react"
+import personFill from "@iconify-icons/bi/person-fill"
+
 const Homescreen = props => (
   <Screen>
     <Sidebar>
-      P<br/>
-      P<br/>
-      P<br/>
-      P<br/>
+      <Icon icon={personFill} />
+      <span>P</span>
+      <span>P</span>
+      <span>P</span>
     </Sidebar>
 
     <Relays>
@@ -46,6 +49,8 @@ border-radius: 4px;
 padding: 12px;
 height: 120px;
 background-color: #FAF9DD;
+display: flex;
+flex-direction: column;
 `
 
 var Relays = styled.div`
