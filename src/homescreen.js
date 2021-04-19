@@ -3,7 +3,8 @@ import styled from "styled-components"
 
 import { Icon, InlineIcon } from "@iconify/react"
 import personFill from "@iconify-icons/bi/person-fill"
-import gearFill from '@iconify-icons/bi/gear-fill';
+import gearFill from "@iconify-icons/bi/gear-fill"
+import closeFilled from "@iconify-icons/carbon/close-filled"
 import linkChain from "@iconify-icons/akar-icons/link-chain"
 
 const Homescreen = props => (
@@ -12,6 +13,7 @@ const Homescreen = props => (
       <Icon icon={linkChain} />
       <Icon icon={personFill} />
       <Icon icon={gearFill} />
+      <Icon icon={closeFilled} />
     </Sidebar>
 
     <Relays>
@@ -40,7 +42,7 @@ right: 0;
 top: 0;
 
 display: grid;
-grid-template-columns: 48px auto 1fr;
+grid-template-columns: auto auto 1fr;
 grid-template-rows: auto;
 `
 
@@ -52,6 +54,14 @@ height: 120px;
 background-color: #FAF9DD;
 display: flex;
 flex-direction: column;
+
+& > svg {
+  width: 24px;
+  height: 24px;
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+}
 `
 
 var Relays = styled.div`
