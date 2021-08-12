@@ -7,6 +7,8 @@ import gearFill from "@iconify-icons/bi/gear-fill"
 import closeFilled from "@iconify-icons/carbon/close-filled"
 import linkChain from "@iconify-icons/akar-icons/link-chain"
 
+import Signal from "./signal"
+
 class Homescreen extends React.Component {
   state = {
     signals: [],
@@ -88,13 +90,6 @@ background-color: #FAF9DD;
 var Queue = styled.div`
 display: flex;
 flex-direction: column;
-`
-
-var Signal = styled.div`
-border: 1px solid #3d3b11;
-border-radius: 4px;
-padding: 12px;
-background-color: #FAF9DD;
 `
 
 export default Homescreen
