@@ -8,6 +8,7 @@ import closeFilled from "@iconify-icons/carbon/close-filled"
 import linkChain from "@iconify-icons/akar-icons/link-chain"
 
 import Signal from "./signal"
+import ask from "./core"
 
 class Homescreen extends React.Component {
   state = {
@@ -15,7 +16,7 @@ class Homescreen extends React.Component {
   }
 
   componentDidMount() {
-    fetch("/signals")
+    ask("/signals", { "hidden": "no" })
     .then(response => response.json())
     .then(response => this.setState({ signals: response.signals }))
   }
