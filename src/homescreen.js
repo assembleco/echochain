@@ -7,31 +7,40 @@ import gearFill from "@iconify-icons/bi/gear-fill"
 import closeFilled from "@iconify-icons/carbon/close-filled"
 import linkChain from "@iconify-icons/akar-icons/link-chain"
 
-const Homescreen = props => (
-  <Screen>
-    <Sidebar>
-      <Icon icon={linkChain} />
-      <Icon icon={personFill} />
-      <Icon icon={gearFill} />
-      <Icon icon={closeFilled} />
-    </Sidebar>
+class Homescreen extends React.Component {
+  state = {
+    signals: [],
+  }
 
-    <Relays>
-      <Relay>Personal</Relay>
-      <Relay>Business</Relay>
-      <Relay>Echochain beginner</Relay>
-    </Relays>
+  componentDidMount() {
+    fetch("/signals")
+    .then(response => response.json())
+    .then(response => this.setState({ signals: response.signals }))
+  }
 
-    <Queue>
-      <Signal style={{height: Math.random() * 240 }}>abc123</Signal>
-      <Signal style={{height: Math.random() * 240 }}>abc123</Signal>
-      <Signal style={{height: Math.random() * 240 }}>abc123</Signal>
-      <Signal style={{height: Math.random() * 240 }}>abc123</Signal>
-      <Signal style={{height: Math.random() * 240 }}>abc123</Signal>
-      <Signal style={{height: Math.random() * 240 }}>abc123</Signal>
-    </Queue>
-  </Screen>
-)
+  render = () => (
+    <Screen>
+      <Sidebar>
+        <Icon icon={linkChain} />
+        <Icon icon={personFill} />
+        <Icon icon={gearFill} />
+        <Icon icon={closeFilled} />
+      </Sidebar>
+
+      <Relays>
+        <Relay>Personal</Relay>
+        <Relay>Business</Relay>
+        <Relay>Echochain beginner</Relay>
+      </Relays>
+
+      <Queue>
+        {this.state.signals.map(signal => (
+          <Signal>{signal.body}</Signal>
+        ))}
+      </Queue>
+    </Screen>
+  )
+}
 
 var Screen = styled.div`
 padding: 24px;

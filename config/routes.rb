@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   # see https://guides.rubyonrails.org/routing.html
 
   root to: "pages#index"
+  resources :signals, only: [:index]
 end
