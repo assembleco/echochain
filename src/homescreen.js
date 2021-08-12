@@ -8,7 +8,7 @@ import closeFilled from "@iconify-icons/carbon/close-filled"
 import linkChain from "@iconify-icons/akar-icons/link-chain"
 
 import Signal from "./signal"
-import ask from "./core"
+import { ask } from "./core"
 
 class Homescreen extends React.Component {
   state = {
