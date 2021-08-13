@@ -13,7 +13,6 @@ RSpec.describe "Signals", type: :request do
       expect(body['signals'].count).to eq 1
     end
 
-    it "detects slash codes in the middle of a signal"
     it "has no effect on the 'help' code"
   end
 end
