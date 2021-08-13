@@ -1,10 +1,13 @@
 import React from 'react'
 import styled from "styled-components"
+import ReactMarkdown from "react-markdown"
 
 class Signal extends React.Component {
   render = () => (
     <Border>
-      {this.props.children}
+      <ReactMarkdown>
+        {this.props.children}
+      </ReactMarkdown>
     </Border>
   )
 }
