@@ -3,6 +3,8 @@ import styled from "styled-components"
 import ReactMarkdown from "react-markdown"
 import { Icon } from '@iconify/react';
 
+import { push } from "./core"
+
 class Signal extends React.Component {
   state = {
     change: null,
@@ -21,10 +23,14 @@ class Signal extends React.Component {
 
       {this.state.change
         ?
-        <textarea
-        style={{ height: "20rem", width: "100%" }}
-        value={this.state.change}
-        />
+        <>
+          <textarea
+          style={{ height: "20rem", width: "100%" }}
+          value={this.state.change}
+          onChange={(e) => this.setState({ change: e.target.value })}
+          />
+          <button onClick={() => this.recordChange()} >Record Changes</button>
+        </>
 
         :
         <ReactMarkdown>
@@ -33,6 +39,16 @@ class Signal extends React.Component {
       }
     </Border>
   )
+
+  recordChange() {
+    push(
+      `/signals/${this.props.id}`,
+      { body: this.state.change, id: this.props.id },
+      "PATCH",
+    )
+      .then(response => response.json())
+      .then(response => this.props.onChange(response.body))
+  }
 }
 
 var Border = styled.div`

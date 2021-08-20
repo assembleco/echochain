@@ -8,7 +8,7 @@ import closeFilled from "@iconify-icons/carbon/close-filled"
 import linkChain from "@iconify-icons/akar-icons/link-chain"
 
 import Signal from "./signal"
-import { ask } from "./core"
+import { pull } from "./core"
 
 class Homescreen extends React.Component {
   state = {
@@ -16,7 +16,11 @@ class Homescreen extends React.Component {
   }
 
   componentDidMount() {
-    ask("/signals", { "hidden": "no" })
+    this.pullSignals()
+  }
+
+  pullSignals() {
+    pull("/signals", { "hidden": "yes" })
     .then(response => response.json())
     .then(response => this.setState({ signals: response.signals }))
   }
@@ -37,8 +41,14 @@ class Homescreen extends React.Component {
       </Relays>
 
       <Queue>
-        {this.state.signals.map(signal => (
-          <Signal>{signal.body}</Signal>
+        {this.state.signals.map((signal, index) => (
+          <Signal
+          id={signal.id}
+          /* ERROR: don't pull all signals, use index and update body in-place*/
+          onChange={(body) => this.pullSignals()}
+          >
+            {signal.body}
+          </Signal>
         ))}
       </Queue>
     </Screen>
