@@ -46,6 +46,7 @@ class Homescreen extends React.Component {
           id={signal.id}
           /* ERROR: don't pull all signals, use index and update body in-place*/
           onChange={(body) => this.pullSignals()}
+          name={signal.name}
           >
             {signal.body}
           </Signal>

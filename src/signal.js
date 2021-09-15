@@ -33,9 +33,12 @@ class Signal extends React.Component {
         </>
 
         :
-        <ReactMarkdown>
-          {this.props.children}
-        </ReactMarkdown>
+        <>
+          <h3>{this.props.name}</h3>
+          <ReactMarkdown>
+            {this.props.children}
+          </ReactMarkdown>
+        </>
       }
     </Border>
   )
